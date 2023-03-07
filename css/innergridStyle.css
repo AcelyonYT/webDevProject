@@ -1,0 +1,15 @@
+div {
+    padding: 10px;
+}
+.leftside{
+    grid-area: leftside;
+}
+.rightside{
+    grid-area: rightside;
+}
+
+.innergrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "leftside         rightside"
+}
