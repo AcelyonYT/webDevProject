@@ -1,0 +1,112 @@
+/* for all pages */
+.topbottom {
+    background-color: black;
+}
+
+.newsize {
+    font-size: 30px;
+}
+
+nav {
+    grid-area: navbar;
+}
+
+header {
+    background-color: red;
+    grid-area: header;
+}
+
+.whiteText {
+    color: white;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.middle {
+    background-color: gray;
+}
+
+aside {
+    background-image: url("../images/tiretracks.png");
+}
+
+.sidebar1 {
+    grid-area: sidebar1;
+}
+
+.sidebar2 {
+    grid-area: sidebar2;
+}
+
+main {
+    min-height: 100vh;
+    grid-area: main;
+}
+
+.indentleft {
+    margin-left: 250px;
+}
+
+footer {
+    color: gray;
+    grid-area: footer;
+}
+/* end of for all pages */
+
+.textCenter {
+    text-align: center;
+}
+
+/* start menu bar formatting */
+.nav-bar {
+    margin: 10;
+}
+
+.nav-list {
+    display: inline;
+}
+
+.noDec {
+    text-decoration: none;
+}
+
+/* edits text on menu bar */
+.links {
+    display: inline-block;
+    font-size: 25px;
+    width: 100px;
+    padding: 15px;
+}
+
+/* adds hover effects to menu bar */
+.links:hover
+{
+    background-color: white;
+    color: black;
+}
+/* end menu bar formatting */
+
+.picture {
+    width: 500px;
+    float: left;
+    border: 5px solid black;
+    margin-right: 10px;
+}
+
+.displayGrid {
+    display: grid;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    grid-template-columns: 0.5fr 5fr 0.5fr;
+    grid-template-areas: 
+        "navbar     navbar       navbar"
+        "header     header      header"
+        "sidebar1   main        sidebar2"
+        "sidebar1   main        sidebar2"
+        "footer     footer      footer";
+}

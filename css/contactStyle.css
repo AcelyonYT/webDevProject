@@ -1,0 +1,23 @@
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 35px;
+  width: 55px;
+}
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.8;
+}
+/* Set a specific color for each brand */
+/* Facebook icon */
+.fa-facebook {
+  background: #3B5998;
+}
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+} 
+/* Snapchat icon */
+.fa-snapchat {
+  background: yellow;
+}
