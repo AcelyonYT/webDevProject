@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/mapStyle.css">
+    <title>Road Kill Grill</title>
+</head>
+<body class="container displayGrid">
+    <nav class="topbottom">
+        <ul class="nav-bar textCenter">
+            <li class="nav-list"><a class="links whiteText noDec" href="./home.html">Home</a></li>
+            <li class="nav-list"><a class="links whiteText noDec" href="./about.html">About</a></li>
+            <li class="nav-list"><a class="links whiteText noDec" href="./menu.html">Menu</a></li>
+            <li class="nav-list"><a class="links whiteText noDec" href="./contact.html">Contact</a></li>
+            <li class="nav-list"><a class="links whiteText noDec" href="./map.html">Map</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1 class="indentleft whiteText">Map</h1>
+    </header>
+    <!-- side bar1-->
+    <aside class="sidebar1 middle">
+
+    </aside>
+    <!-- side bar2 -->
+    <aside class="sidebar2 middle">
+        
+    </aside>
+    <main class="middle" id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+		<div class="map" id="map-9cd199b9cc5410cd3b1ad21cab2e54d3">
+        </div>
+        <script>(function () {
+            var setting = {
+                "zoom":17,
+                "queryString":"U.S. Route 66, Lupton, AZ, USA",
+                "place_id":"Eh5VLlMuIFJvdXRlIDY2LCBMdXB0b24sIEFaLCBVU0EiLiosChQKEgkxKBJWGFXahxEvhXKH-Ye7_BIUChIJaxhMy-sIK4cRcc3Bf7EnOUI",
+                "satellite":true,
+                "centerCoord":[34.955380211101115,-110.3179173],
+                "cid":"0xfcbb87f98772852f",
+                "lang":"en",
+                "cityUrl":"/us/az/holbrook-1525",
+                "cityAnchorText":"Map of Holbrook, Arizona, United States",
+                "id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3",
+                "embed_id":"881148"
+            };
+            var d = document;
+            var s = d.createElement('script');
+            s.src = 'https://1map.com/js/script-for-user.js?embed_id=881148';
+            s.async = true;
+            s.onload = function (e) {
+                window.OneMap.initMap(setting)
+            };
+            var to = d.getElementsByTagName('script')[0];
+            to.parentNode.insertBefore(s, to);
+        })();
+        </script>
+        <a href="https://1map.com/map-embed">1 Map</a>
+    </main>
+    <footer class="topbottom">
+        <p class="indentleft">copyright 2023</p>
+    </footer>
+</body>
+</html>
