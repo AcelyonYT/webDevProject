@@ -1,0 +1,15 @@
+.rightside{
+    background-color: white;
+    border: 20px solid gray;
+}
+
+.buttonContainer{
+    text-align: center;
+}
+
+.categories{
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+}
