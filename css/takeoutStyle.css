@@ -13,3 +13,18 @@
     padding: 10px 20px;
     font-size: 15px;
 }
+
+.cartlist{
+    background-color: gray;
+    min-height: 750px;
+}
+
+.item{
+    background-color: black;
+    color: white;
+}
+
+.price
+{
+    float: right;
+}
