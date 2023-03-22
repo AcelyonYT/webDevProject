@@ -1,0 +1,30 @@
+.rightside{
+    background-color: white;
+    border: 20px solid gray;
+}
+
+.buttonContainer{
+    text-align: center;
+}
+
+.categories{
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+.cartlist{
+    background-color: gray;
+    min-height: 750px;
+}
+
+.item{
+    background-color: black;
+    color: white;
+}
+
+.price
+{
+    float: right;
+}
