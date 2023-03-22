@@ -7,6 +7,10 @@
     font-size: 30px;
 }
 
+.newsize25 {
+    font-size: 25px;
+}
+
 nav {
     grid-area: navbar;
 }
@@ -49,6 +53,10 @@ main {
     margin-left: 250px;
 }
 
+.full {
+    width: 100%;
+}
+
 footer {
     color: gray;
     grid-area: footer;
@@ -75,7 +83,6 @@ footer {
 /* edits text on menu bar */
 .links {
     display: inline-block;
-    font-size: 25px;
     width: 100px;
     padding: 15px;
 }
