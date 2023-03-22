@@ -6,3 +6,8 @@
 .price {
     float: right;
 }
+
+.menuImage
+{
+    max-width: 450px;
+}

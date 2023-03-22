@@ -28,3 +28,9 @@
 {
     float: right;
 }
+
+.price-box
+{
+    float: right;
+    text-align: right;
+}
