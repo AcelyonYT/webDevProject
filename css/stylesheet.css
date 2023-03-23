@@ -67,6 +67,10 @@ footer {
     text-align: center;
 }
 
+.price {
+    float: right;
+}
+
 /* start menu bar formatting */
 .nav-bar {
     margin: 10;

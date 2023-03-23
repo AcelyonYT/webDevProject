@@ -15,13 +15,13 @@ function GetCategory( CategoryFileName ) {
 function StartDrag( CurrentEvent ) {
     CurrentEvent.dataTransfer.setData( "text/html", CurrentEvent.target.id );
 }
-function Drop( CurrentEvent, DestinationID ) {
-    AllowDrop();
-    let DataID = CurrentEvent.dataTransfer.getData( "text/html" );
-    document.getElementById( DestinationID ).appendChild( document.getElementById( DataID ).cloneNode( true ) );
-}
 function AllowDrop( CurrentEvent ) {
     CurrentEvent.preventDefault();
+}
+function Drop( CurrentEvent, DestinationID ) {
+    CurrentEvent.preventDefault();
+    let DataID = CurrentEvent.dataTransfer.getData( "text/html" );
+    document.getElementById( DestinationID ).appendChild( document.getElementById( DataID ).cloneNode( true ) );
 }
 function ComputeTotal() {
     let Orders = document.querySelectorAll( "div[id='orderlist'] div" );
@@ -31,19 +31,14 @@ function ComputeTotal() {
     }
     document.querySelector(".total").innerHTML = `<p class="total">Total: <span id="totalval" data-point-value=${value}>${value}<span></p>`;
 }
-
-//Finding tax for items in the cart
 function ComputeTax() {
-    var totalValue = Number(document.getElementById('totalval').getAttribute("data-point-value"));
-    var taxValue = Math.ceil((totalValue * .06)*100)/100;
+    let totalValue = Number( document.getElementById( 'totalval' ).getAttribute( "data-point-value" ) );
+    let taxValue = Math.ceil( ( totalValue * .06 ) * 100 ) / 100;
     document.querySelector(".tax").innerHTML = `<p class="tax">Tax: <span id="taxval" data-point-value=${taxValue} >${taxValue}</span></p>`;
 }
-
-//Subtotal of the cart (total + tax)
-
 function ComputeSubtotal() {
-    var totalValue = Number(document.getElementById('totalval').getAttribute("data-point-value"));
-    var taxValue = Number(document.getElementById('taxval').getAttribute("data-point-value"));
-    var subtotalValue = Math.ceil((totalValue + taxValue)*100)/100;
+    let totalValue = Number( document.getElementById( 'totalval' ).getAttribute( "data-point-value" ) );
+    let taxValue = Number( document.getElementById( 'taxval' ).getAttribute( "data-point-value" ) );
+    let subtotalValue = Math.ceil( ( totalValue + taxValue ) * 100 ) / 100;
     document.querySelector(".subtotal").innerHTML = `<p class="subtotal">Subtotal: ${subtotalValue}</p>`;
 }

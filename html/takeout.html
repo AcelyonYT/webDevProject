@@ -26,13 +26,13 @@
     </header>
     <main class="displayGrid middle innergrid">
         <div class="leftside">
-            <div class="buttonContainer">
-                <button class="categories" onclick="GetCategory('./orderItems/appetizers.html');">Appetizers</button>
-                <button class="categories" onclick="GetCategory('./orderItems/burgers.html');">Burgers</button>
-                <button class="categories" onclick="GetCategory('./orderItems/poultry.html');">Poultry</button>
-                <button class="categories" onclick="GetCategory('./orderItems/salads.html');">Salads</button>
-                <button class="categories" onclick="GetCategory('./orderItems/kids.html');">Kids</button>
-                <button class="categories" onclick="GetCategory('./orderItems/drinks.html');">Drinks</button>
+            <div class="textCenter">
+                <button class="topbottom whiteText categories" onclick="GetCategory('./orderItems/appetizers.html');">Appetizers</button>
+                <button class="topbottom whiteText categories" onclick="GetCategory('./orderItems/burgers.html');">Burgers</button>
+                <button class="topbottom whiteText categories" onclick="GetCategory('./orderItems/poultry.html');">Poultry</button>
+                <button class="topbottom whiteText categories" onclick="GetCategory('./orderItems/salads.html');">Salads</button>
+                <button class="topbottom whiteText categories" onclick="GetCategory('./orderItems/kids.html');">Kids</button>
+                <button class="topbottom whiteText categories" onclick="GetCategory('./orderItems/drinks.html');">Drinks</button>
             </div>
             <section id="categoryDisplay">
                 <h3>Click button to display category menu</h3>
@@ -41,10 +41,10 @@
         </div>
         <div class="rightside">
             <h3><img src="../images/shoppingCart.png"> Shopping Cart</h3>
-            <div id="orderlist" class="cartlist" ondragover="AllowDrop(event);" ondrop="Drop(event, 'orderlist');">
+            <div id="orderlist" class="middle cartlist" ondragover="AllowDrop(event);" ondrop="Drop(event, 'orderlist');">
 
             </div>
-            <div class="price-box">
+            <div class="price price-box">
                 <p class="total"> Total:</p>
                 <p class="tax"> Tax:</p>
                 <p class="subtotal"> Subtotal:</p>
