@@ -29,5 +29,21 @@ function ComputeTotal() {
     for( let i=0; i< Orders.length; i++ ) {
         value += Number( Orders[i].getAttribute( "data-point-value" ) );
     }
-    document.querySelector(".total").innerHTML = `<p class="total">Total: ${value}</p>`;
+    document.querySelector(".total").innerHTML = `<p class="total">Total: <span id="totalval" data-point-value=${value}>${value}<span></p>`;
+}
+
+//Finding tax for items in the cart
+function ComputeTax() {
+    var totalValue = Number(document.getElementById('totalval').getAttribute("data-point-value"));
+    var taxValue = Math.ceil((totalValue * .06)*100)/100;
+    document.querySelector(".tax").innerHTML = `<p class="tax">Tax: <span id="taxval" data-point-value=${taxValue} >${taxValue}</span></p>`;
+}
+
+//Subtotal of the cart (total + tax)
+
+function ComputeSubtotal() {
+    var totalValue = Number(document.getElementById('totalval').getAttribute("data-point-value"));
+    var taxValue = Number(document.getElementById('taxval').getAttribute("data-point-value"));
+    var subtotalValue = Math.ceil((totalValue + taxValue)*100)/100;
+    document.querySelector(".subtotal").innerHTML = `<p class="subtotal">Subtotal: ${subtotalValue}</p>`;
 }

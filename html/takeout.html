@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/stylesheet.css">
     <link rel="stylesheet" href="../css/takeoutStyle.css">
+    <link rel="stylesheet" href="../css/innergridStyle.css">
+    <script src="../javascript/takeoutScript.js" defer></script>
     <title>Road Kill Grill</title>
 </head>
 <body class="container displayGrid">
@@ -22,7 +24,33 @@
     <header>
         <h1 class="indentleft whiteText">Take-Out</h1>
     </header>
-    <main class="homeMain middle"></main>
+    <main class="displayGrid middle innergrid">
+        <div class="leftside">
+            <div class="buttonContainer">
+                <button class="categories" onclick="GetCategory('./orderItems/appetizers.html');">Appetizers</button>
+                <button class="categories" onclick="GetCategory('./orderItems/burgers.html');">Burgers</button>
+                <button class="categories" onclick="GetCategory('./orderItems/poultry.html');">Poultry</button>
+                <button class="categories" onclick="GetCategory('./orderItems/salads.html');">Salads</button>
+                <button class="categories" onclick="GetCategory('./orderItems/kids.html');">Kids</button>
+                <button class="categories" onclick="GetCategory('./orderItems/drinks.html');">Drinks</button>
+            </div>
+            <section id="categoryDisplay">
+                <h3>Click button to display category menu</h3>
+                
+            </section>
+        </div>
+        <div class="rightside">
+            <h3><img src="../images/shoppingCart.png"> Shopping Cart</h3>
+            <div id="orderlist" class="cartlist" ondragover="AllowDrop(event);" ondrop="Drop(event, 'orderlist');">
+
+            </div>
+            <div class="price-box">
+                <p class="total"> Total:</p>
+                <p class="tax"> Tax:</p>
+                <p class="subtotal"> Subtotal:</p>
+            </div>
+        </div>
+    </main>
     <!-- side bar1-->
     <aside class="sidebar1 middle">
     </aside>
