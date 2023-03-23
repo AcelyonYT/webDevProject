@@ -22,7 +22,7 @@ function Drop( CurrentEvent, DestinationID ) {
     CurrentEvent.preventDefault();
     let DataID = CurrentEvent.dataTransfer.getData( "text/html" );
     document.getElementById( DestinationID ).appendChild( document.getElementById( DataID ).cloneNode( true ) );
-    ComputeTax();
+    ComputeTotal();
     ComputeTax();
     ComputeSubtotal();
 }
