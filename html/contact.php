@@ -1,31 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/stylesheet.css">
+<?php include("phpfunctions.inc") ?>
+<?php
+    HTMLStart("Road Kill Grill");
+?>
     <link rel="stylesheet" href="../css/innergridStyle.css">
     <link rel="stylesheet" href="../css/contactStyle.css">
     <script src="../javascript/contact.js" defer ></script>
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Road Kill Grill</title>
-</head>
-<body class="container displayGrid">
-    <nav class="topbottom">
-        <ul class="nav-bar textCenter">
-            <li class="nav-list"><a class="links whiteText noDec newsize25" href="../index.html">Home</a></li>
-            <li class="nav-list"><a class="links whiteText noDec newsize25" href="./about.html">About</a></li>
-            <li class="nav-list"><a class="links whiteText noDec newsize25" href="./menu.html">Menu</a></li>
-            <li class="nav-list"><a class="links whiteText noDec newsize25" href="./takeout.html">Order</a></li>
-            <li class="nav-list"><a class="links whiteText noDec newsize25" href="./contact.html">Contact</a></li>
-            <li class="nav-list"><a class="links whiteText noDec newsize25" href="./map.html">Map</a></li>
-        </ul>
-    </nav>
-    <header>
-        <h1 class="indentleft whiteText">How can we help you!</h1>
-    </header>
+<?php 
+    HTMLStartCont();
+    PageNav();
+    PageHeader("How can we help you!");
+?>
     <main class="middle innergrid displayGrid">
         <div class="newsize leftside">
             Visit us at:<br>
@@ -71,14 +57,9 @@
             <img class="picture" src="../images/contact.jpg" alt="helpCenterPicture">
         </div>
     </main>
-    <!-- side bar1-->
-    <aside class="sidebar1 middle">
-    </aside>
-    <!-- side bar2 -->
-    <aside class="sidebar2 middle">
-    </aside>
-    <footer class="topbottom">
-        <p class="indentleft">copyright 2023</p>
-    </footer>
-</body>
-</html>
+<?php
+    Sidebar1();
+    Sidebar2();
+    PageFooter();
+    HTMLEnd();
+?>

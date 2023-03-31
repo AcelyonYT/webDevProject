@@ -41,7 +41,7 @@
         <!-- navigation stuff -->
         <nav class="topbottom">
             <ul class="nav-bar textCenter">
-                <li class="nav-list"><a class="links whiteText noDec newsize25" href="../index.html">Home</a></li>
+                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./index.html">Home</a></li>
                 <li class="nav-list"><a class="links whiteText noDec newsize25" href="./about.html">About</a></li>
                 <li class="nav-list"><a class="links whiteText noDec newsize25" href="./menu.html">Menu</a></li>
                 <li class="nav-list"><a class="links whiteText noDec newsize25" href="./takeout.html">Order</a></li>
@@ -55,7 +55,7 @@
 
 <?php
     // function to write the footer
-    function Header( $HeaderTitle ) {
+    function PageHeader( $HeaderTitle ) {
 ?>
         <!-- Header -->
         <header>
@@ -67,7 +67,7 @@
 
 <?php
     // function to write the footer
-    function Footer() {
+    function PageFooter() {
 ?>
         <!-- Footer -->
         <footer class="topbottom">
