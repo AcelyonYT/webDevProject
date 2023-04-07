@@ -1,6 +1,8 @@
+/* Changing the whole font */
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -29,6 +31,7 @@ body {
   background: yellow;
 }
 
+/* Changes the input styles */
 input[type=text], select, textarea {
   padding: 12px;
   border: 1px solid #ccc;
@@ -38,12 +41,14 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
+/* button style */
 button {
   background-color: #04AA6D;
   padding: 12px 20px;
-  cursor: pointer;
 }
 
+/* Change button style on hover */
 button:hover {
+  cursor: pointer;
   background-color: #45a049;
 }

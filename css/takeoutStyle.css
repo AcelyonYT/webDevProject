@@ -1,17 +1,22 @@
+/* Takeout page Specific styles */
+/* Cart style */
 .rightside {
     background-color: white;
     border: 20px solid gray;
 }
 
+/* Styles the buttons */
 .categories {
     padding: 10px 20px;
     font-size: 15px;
 }
 
+/* Container for Ajax list, sets min height */
 .cartlist {
     min-height: 750px;
 }
 
+/* Sets the price of the items to the right */
 .price-box {
     text-align: right;
 }

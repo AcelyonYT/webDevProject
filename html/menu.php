@@ -1,11 +1,8 @@
-<?php include("phpfunctions.inc") ?>
+<?php require("../phpfunctions.inc") ?>
 <?php
-    HTMLStart("Road Kill Grill");
-?>
-    <link rel="stylesheet" href="../css/innergridStyle.css">
-    <link rel="stylesheet" href="../css/menuStyle.css">
-<?php 
-    HTMLStartCont();
+    $StyleArray = ["../css/innergridStyle.css", "../css/menuStyle.css"];
+    $JSArray = [];
+    HTMLStart("Road Kill Grill", $StyleArray, $JSArray);
     PageNav();
     PageHeader("Menu");
 ?>

@@ -1,14 +1,8 @@
-<?php include("phpfunctions.inc") ?>
+<?php require("../phpfunctions.inc") ?>
 <?php
-    HTMLStart("Road Kill Grill");
-?>
-    <link rel="stylesheet" href="../css/innergridStyle.css">
-    <link rel="stylesheet" href="../css/contactStyle.css">
-    <script src="../javascript/contact.js" defer ></script>
-    <!-- Add icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<?php 
-    HTMLStartCont();
+    $StyleArray = ["../css/innergridStyle.css", "../css/contactStyle.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"];
+    $JSArray = ["../javascript/contact.js"];
+    HTMLStart("Road Kill Grill", $StyleArray, $JSArray);
     PageNav();
     PageHeader("How can we help you!");
 ?>

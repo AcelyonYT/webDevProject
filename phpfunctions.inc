@@ -1,6 +1,6 @@
 <?php
     // function to start HTML page
-    function HTMLStart( $title ) {
+    function HTMLStart( $title, $StyleArray, $JSArray ) {
 ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -10,27 +10,26 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title><?php echo $title ?></title>
             <link rel="stylesheet" href="../css/stylesheet.css">
-<?php        
-    }
-?>
+<?php    
+        // Loops through an array and returns a link tag with the stylesheets
+        for( $i = 0; $i < count($StyleArray); $i++ )
+        {
+            echo "<link rel='stylesheet' href='".$StyleArray[$i]."'>";
+        }
 
-<?php
-    // function to finish starting HTML page
-    function HTMLStartCont() {
+        // Checks if we have any js files
+        if( count($JSArray) > 0) 
+        {
+            // Loops through an array and returns a script tag with the js file
+            for( $i = 0; $i < count($JSArray); $i++ )
+            {
+                echo "<script src='".$JSArray[$i]."' defer></script>";
+            }
+        }
 ?>
-    </head>
-    <body class="container displayGrid">
-<?php       
-    }
-?>
-
-<?php
-    // function to end HTML page
-    function HTMLEnd() {
-?>
-        </body>
-        </html>
-<?php> 
+        </head>
+        <body class="container displayGrid">
+<?php 
     }
 ?>
 
@@ -41,12 +40,12 @@
         <!-- navigation stuff -->
         <nav class="topbottom">
             <ul class="nav-bar textCenter">
-                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./index.html">Home</a></li>
-                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./about.html">About</a></li>
-                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./menu.html">Menu</a></li>
-                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./takeout.html">Order</a></li>
-                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./contact.html">Contact</a></li>
-                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./map.html">Map</a></li>
+                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./index.php">Home</a></li>
+                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./about.php">About</a></li>
+                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./menu.php">Menu</a></li>
+                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./takeout.php">Order</a></li>
+                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./contact.php">Contact</a></li>
+                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./map.php">Map</a></li>
             </ul>
         </nav>
 <?php        
@@ -96,5 +95,15 @@
         <aside class="sidebar2 middle">
         </aside>
 <?php        
+    }
+?>
+
+<?php
+    // function to end HTML page
+    function HTMLEnd() {
+?>
+        </body>
+        </html>
+<?php
     }
 ?>

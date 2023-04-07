@@ -1,10 +1,8 @@
-<?php include("phpfunctions.inc") ?>
+<?php require("../phpfunctions.inc") ?>
 <?php
-    HTMLStart("Road Kill Grill");
-?>
-    <link rel="stylesheet" href="../css/aboutStyle.css">
-<?php 
-    HTMLStartCont();
+    $StyleArray = ["../css/aboutStyle.css"];
+    $JSArray = [];
+    HTMLStart("Road Kill Grill", $StyleArray, $JSArray);
     PageNav();
     PageHeader("About");
 ?>

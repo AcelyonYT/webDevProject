@@ -1,31 +1,8 @@
 /* for all pages */
+
+/* Background for pages */
 .topbottom {
     background-color: black;
-}
-
-.newsize {
-    font-size: 30px;
-}
-
-.newsize25 {
-    font-size: 25px;
-}
-
-nav {
-    grid-area: navbar;
-}
-
-header {
-    background-color: red;
-    grid-area: header;
-}
-
-.whiteText {
-    color: white;
-}
-
-h1 {
-    font-size: 40px;
 }
 
 .middle {
@@ -36,6 +13,85 @@ aside {
     background-image: url("../images/tiretracks.png");
 }
 
+/* Font Sizes */
+.newsize {
+    font-size: 30px;
+}
+
+.newsize25 {
+    font-size: 25px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+/* Text Color */
+.whiteText {
+    color: white;
+}
+
+/* Indentions */
+.indentleft {
+    margin-left: 250px;
+}
+
+/* Width sizes */
+.full {
+    width: 100%;
+}
+
+/* Text alignment/position */
+.textCenter {
+    text-align: center;
+}
+
+.price {
+    float: right;
+}
+
+/* Text Decorations */
+.noDec {
+    text-decoration: none;
+}
+
+/* Other Styles */
+.nav-bar {
+    margin: 10;
+}
+
+.nav-list {
+    display: inline;
+}
+
+.links {
+    display: inline-block;
+    width: 100px;
+    padding: 15px;
+}
+
+/* Hover styles */
+.links:hover
+{
+    background-color: white;
+    color: black;
+}
+
+/* style for pictures */
+.picture {
+    width: 500px;
+    float: left;
+    border: 5px solid black;
+    margin-right: 10px;
+}
+
+/* Grid Styles below */
+
+/* 
+    Sets the grid ares
+    sets main to have a min height
+    plots  our the areas in a template
+ */
 .sidebar1 {
     grid-area: sidebar1;
 }
@@ -49,61 +105,18 @@ main {
     grid-area: main;
 }
 
-.indentleft {
-    margin-left: 250px;
-}
-
-.full {
-    width: 100%;
+nav {
+    grid-area: navbar;
 }
 
 footer {
     color: gray;
     grid-area: footer;
 }
-/* end of for all pages */
 
-.textCenter {
-    text-align: center;
-}
-
-.price {
-    float: right;
-}
-
-/* start menu bar formatting */
-.nav-bar {
-    margin: 10;
-}
-
-.nav-list {
-    display: inline;
-}
-
-.noDec {
-    text-decoration: none;
-}
-
-/* edits text on menu bar */
-.links {
-    display: inline-block;
-    width: 100px;
-    padding: 15px;
-}
-
-/* adds hover effects to menu bar */
-.links:hover
-{
-    background-color: white;
-    color: black;
-}
-/* end menu bar formatting */
-
-.picture {
-    width: 500px;
-    float: left;
-    border: 5px solid black;
-    margin-right: 10px;
+header {
+    background-color: red;
+    grid-area: header;
 }
 
 .displayGrid {

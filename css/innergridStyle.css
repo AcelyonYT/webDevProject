@@ -1,9 +1,17 @@
+/* 
+    For elements that need a right and left side grid 
+    For nesting grids
+*/
+
 div {
     padding: 10px;
 }
+
+/* Sets the grid areas and displays in template */
 .leftside{
     grid-area: leftside;
 }
+
 .rightside{
     grid-area: rightside;
 }
