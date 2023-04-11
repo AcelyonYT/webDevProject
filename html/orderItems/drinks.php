@@ -1,7 +1,7 @@
 <h3>Drinks</h3>
 <div id="item9" class="topbottom whiteText item" data-point-value="1.99" draggable="true" ondragstart="StartDrag( event );">Coke <span class="price">$1.99</span></div>
 <div id="item10" class="topbottom whiteText item" data-point-value="1.99" draggable="true" ondragstart="StartDrag( event );">Diet Coke <span class="price">$1.99</span></div>
-<div id="item11" class="topbottom whiteText item" data-point-value="1.99" draggable="true" ondragstart="StartDrag( event );">Mac and Cheese with Hot Dogs <span class="price">$1.99</span></div>
+<div id="item11" class="topbottom whiteText item" data-point-value="1.99" draggable="true" ondragstart="StartDrag( event );">Sprite <span class="price">$1.99</span></div>
 <div id="item12" class="topbottom whiteText item" data-point-value="1.99" draggable="true" ondragstart="StartDrag( event );">Root Beer <span class="price">$1.99</span></div>
 <div id="item13" class="topbottom whiteText item" data-point-value="1.99" draggable="true" ondragstart="StartDrag( event );">Mellow Yellow <span class="price">$1.99</span></div>
 <div id="item14" class="topbottom whiteText item" data-point-value="1.99" draggable="true" ondragstart="StartDrag( event );">Ginger Ale <span class="price">$1.99</span></div>
