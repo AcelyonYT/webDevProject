@@ -137,3 +137,27 @@ INSERT INTO menu( ITEM_CATEGORY, ITEM_NAME, ITEM_DESCRIPTION, ITEM_PRICE )
 INSERT INTO menu( ITEM_CATEGORY, ITEM_NAME, ITEM_DESCRIPTION, ITEM_PRICE )
     VALUES("drinks", "S'mores Milkshake","", 3.99)
 ;
+
+-- Burgers
+INSERT INTO menu( ITEM_CATEGORY, ITEM_NAME, ITEM_DESCRIPTION, ITEM_PRICE )
+    VALUES("burgers", " Royal Racoon Burger ", "A massive burger built for a king topped with lettuce, tomato,onion, cheddar cheese, and our secret road style sauce", 12.99)
+;
+INSERT INTO menu( ITEM_CATEGORY, ITEM_NAME, ITEM_DESCRIPTION, ITEM_PRICE )
+    VALUES("burgers", "Road Kill Burger", "A burger on a pretzel bun, loaded with cheese sauce, and topped with crispy fried onions", 12.99)
+;
+INSERT INTO menu( ITEM_CATEGORY, ITEM_NAME, ITEM_DESCRIPTION, ITEM_PRICE )
+    VALUES("burgers", "Totaled Car Burger", "A massive quarter pound burger topped with gruyere cheese, sprouts, caramelized onions, mushrooms, and a garlic aioli", 13.99)
+;
+INSERT INTO menu( ITEM_CATEGORY, ITEM_NAME, ITEM_DESCRIPTION, ITEM_PRICE )
+    VALUES("burgers", "I Can't Believe It's Not Opossum Burger", "This vegetarian burger made with impossible meat will blow you mind! Topped with lettuce, tomato, onion, cheddar cheese, and our secret road style sauce", 11.99)
+;
+-- poultry
+INSERT INTO menu( ITEM_CATEGORY, ITEM_NAME, ITEM_DESCRIPTION, ITEM_PRICE )
+    VALUES("poultry", "Flattened Chicken Sandwich", "A breaded in our spice blend and fried chicken breast on a bun with garlic aioli, lettuce, and tomato", 9.99)
+;
+INSERT INTO menu( ITEM_CATEGORY, ITEM_NAME, ITEM_DESCRIPTION, ITEM_PRICE )
+    VALUES("poultry", "Wild Bird Sandwich", "locally hunted wild bird breaded with our special spice blend and fried. Served on a bun with our special hot sauce and pickles", 11.99)
+;
+INSERT INTO menu( ITEM_CATEGORY, ITEM_NAME, ITEM_DESCRIPTION, ITEM_PRICE )
+    VALUES("poultry", "Chicken Finger Basket", "4 chicken fingers served with fries and a side of our garlic aioli", 8.99)
+;
