@@ -107,3 +107,20 @@
 <?php
     }
 ?>
+
+<?php
+    function Connect() {
+        $Server = "";
+        $Username = "";
+        $Password = "";
+        $Database = "";
+
+        $Connection = new mysqli( $Server, $Username, $Password, $Database );
+
+        if( $Connection->connect_error )
+        {
+            echo "<h2>Database Error</h2>\n";
+            die( "MySQLi Connection Error: ".$Connection->connect_error."\n" );
+        }
+    }
+?>

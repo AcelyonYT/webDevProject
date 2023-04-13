@@ -5,6 +5,7 @@
     HTMLStart("Road Kill Grill", $StyleArray, $JSArray);
     PageNav();
     PageHeader("Menu");
+    Connect();
 ?>
     <!-- Main -->
     <main class="middle innergrid displayGrid">
