@@ -163,3 +163,50 @@
         $Connection->close();
     }
 ?>
+<?php
+    function DrinkItemGet($DrinkCats){
+
+        $Server = "";
+        $Username = "";
+        $Password = "";
+        $Database = "";
+
+        $Connection = new mysqli( $Server, $Username, $Password, $Database );
+
+        if( $Connection->connect_error )
+        {
+            echo "<h2>Database Error</h2>\n";
+            die( "MySQLi Connection Error: ".$Connection->connect_error."\n" );
+        }
+
+        echo "<h1 class='menuHeader textCenter whiteText'>Drinks</h1>\n";
+
+        for($i=0; $i<count($DrinkCats); $i++){
+            
+            $SQL = "ITEM_NAME, ITEM_PRICE FROM MENU WHERE ITEM_DESCRIPTION = $DrinkCats[$i];";
+            $Results = $Connection->query( $SQL );
+            
+            $Description = "Flavors: ";
+            $Price = "";
+
+            if ($Results){
+                
+                while($Row = $Results->fetch_row()){
+
+                    $Description += $Row[0];
+                    $Price = $Row[1];
+                }
+            }
+            else 
+            {
+                // no results returned
+                echo "<p>No results returned from the query</p>\n";
+            }
+
+            echo "<h3> ".$DrinkCats[$i]." <span class='price'>$$Price</span></h3>\n";
+            echo "<p>$Description</p>\n";
+
+            $Connection->close();
+        }
+    }  
+?>
