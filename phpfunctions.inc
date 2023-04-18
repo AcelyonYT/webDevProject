@@ -125,7 +125,8 @@
     }
 ?>
 <?php
-    function MenuItemGet( $ItemCat ){
+    function MenuItemGet( $ItemCat )
+    {
         $Server = "";
         $Username = "";
         $Password = "";
@@ -139,22 +140,26 @@
             die( "MySQLi Connection Error: ".$Connection->connect_error."\n" );
         }
 
-        $SQL = "ITEM_CATEGORY, ITEM_NAME, ITEM_DESCRIPTION, ITEM_PRICE FROM MENU WHERE ITEM_CATEGORY = $ItemCat;";
+        $SQL = "ITEM_CATEGORY, ITEM_NAME, ITEM_DESCRIPTION, ITEM_PRICE FROM MENU WHERE ITEM_CATEGORY = ".$ItemCat.";";
         $Results = $Connection->query( $SQL );
 
-        if ($Results){
+        if ($Results)
+        {
 
-            echo "<h1 class='menuHeader textCenter whiteText'>$ItemCat</h1>\n";
+            echo "<h1 class='menuHeader textCenter whiteText'>".$ItemCat."</h1>\n";
 
-            while($Row = $Results->fetch_row()){
-                echo "<h3> $Row[1] <span class='price'>$ $Row[3]</span></h3>\n";
-                echo "<p>$Row[2]</p>\n";
+            while($Row = $Results->fetch_row())
+            {
+                echo "<h3>".$Row[1]." <span class='price'>$".$Row[3]."</span></h3>\n";
+                echo "<p>".$Row[2]."</p>\n";
             }
-        }
-        } else {
+        }  
+        else 
+        {
             // no results returned
             echo "<p>No results returned from the query</p>\n";
         }
 
         $Connection->close();
+    }
 ?>
