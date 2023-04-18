@@ -107,30 +107,13 @@
 <?php
     }
 ?>
-
-<?php
-    function Connect() {
-        $Server = "";
-        $Username = "";
-        $Password = "";
-        $Database = "";
-
-        $Connection = new mysqli( $Server, $Username, $Password, $Database );
-
-        if( $Connection->connect_error )
-        {
-            echo "<h2>Database Error</h2>\n";
-            die( "MySQLi Connection Error: ".$Connection->connect_error."\n" );
-        }
-    }
-?>
 <?php
     function MenuItemGet( $ItemCat )
     {
-        $Server = "";
-        $Username = "";
-        $Password = "";
-        $Database = "";
+        $Server = "127.0.0.1";
+        $Username = "root";
+        $Password = "test";
+        $Database = "homework";
 
         $Connection = new mysqli( $Server, $Username, $Password, $Database );
 
@@ -140,7 +123,7 @@
             die( "MySQLi Connection Error: ".$Connection->connect_error."\n" );
         }
 
-        $SQL = "ITEM_CATEGORY, ITEM_NAME, ITEM_DESCRIPTION, ITEM_PRICE FROM MENU WHERE ITEM_CATEGORY = ".$ItemCat.";";
+        $SQL = "SELECT ITEM_CATEGORY, ITEM_NAME, ITEM_DESCRIPTION, ITEM_PRICE FROM MENU WHERE ITEM_CATEGORY = '".$ItemCat."';";
         $Results = $Connection->query( $SQL );
 
         if ($Results)
@@ -164,12 +147,13 @@
     }
 ?>
 <?php
-    function DrinkItemGet($DrinkCats){
+    function DrinkItemGet( $DrinkCats )
+    {
 
-        $Server = "";
-        $Username = "";
-        $Password = "";
-        $Database = "";
+        $Server = "127.0.0.1";
+        $Username = "root";
+        $Password = "test";
+        $Database = "homework";
 
         $Connection = new mysqli( $Server, $Username, $Password, $Database );
 
@@ -181,19 +165,21 @@
 
         echo "<h1 class='menuHeader textCenter whiteText'>Drinks</h1>\n";
 
-        for($i=0; $i<count($DrinkCats); $i++){
+        for($i=0; $i<count($DrinkCats); $i++)
+        {
             
-            $SQL = "ITEM_NAME, ITEM_PRICE FROM MENU WHERE ITEM_DESCRIPTION = $DrinkCats[$i];";
+            $SQL = "SELECT ITEM_NAME, ITEM_PRICE FROM MENU WHERE ITEM_DESCRIPTION = '".$DrinkCats[$i]."';";
             $Results = $Connection->query( $SQL );
             
-            $Description = "Flavors: ";
+            $Description = "Flavors:";
             $Price = "";
 
-            if ($Results){
+            if ($Results)
+            {
                 
-                while($Row = $Results->fetch_row()){
-
-                    $Description += $Row[0];
+                while($Row = $Results->fetch_row())
+                {
+                    $Description = $Description." ".$Row[0].",";
                     $Price = $Row[1];
                 }
             }
@@ -203,10 +189,10 @@
                 echo "<p>No results returned from the query</p>\n";
             }
 
-            echo "<h3> ".$DrinkCats[$i]." <span class='price'>$$Price</span></h3>\n";
-            echo "<p>$Description</p>\n";
-
-            $Connection->close();
+            echo "<h3>".$DrinkCats[$i]." <span class='price'>$".$Price."</span></h3>\n";
+            echo "<p>".$Description."</p>\n";
         }
-    }  
+
+        $Connection->close();
+    }
 ?>

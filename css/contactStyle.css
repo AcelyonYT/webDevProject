@@ -1,10 +1,11 @@
 /* Changing the whole font */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 * {
   box-sizing: border-box;
+}
+
+.font {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Style all font awesome icons */

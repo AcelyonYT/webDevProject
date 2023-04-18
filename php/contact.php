@@ -6,7 +6,7 @@
     PageNav();
     PageHeader("How can we help you!");
 ?>
-    <main class="middle innergrid displayGrid">
+    <main class="middle innergrid displayGrid font">
         <div class="newsize leftside">
             Visit us at:<br>
             U.S Rt. 66<br>
