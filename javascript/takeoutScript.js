@@ -3,7 +3,7 @@
  * Creates an AJax request to get the file
  * @param {*} CategoryFileName Name of the file with the html
  */
-function GetCategory( CategoryFileName ) {
+function GetCategory( ResultId, Category ) {
     let xmlhttp;
     if ( window.XMLHttpRequest ) {
         xmlhttp = new XMLHttpRequest;
@@ -12,11 +12,16 @@ function GetCategory( CategoryFileName ) {
     }
     xmlhttp.onreadystatechange = () =>  {
         if ( xmlhttp.readyState == 4 && xmlhttp.status == 200 ) {
-            document.getElementById( "categoryDisplay" ).innerHTML = xmlhttp.responseText;
+            document.getElementById( ResultId ).innerHTML = xmlhttp.responseText;
         }
     }
-    xmlhttp.open( "GET", CategoryFileName, true );
-    xmlhttp.send();
+    xmlhttp.open( "POST", "menuItems.php", true );
+
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    let Argument = `Category=${Category}`;
+
+    xmlhttp.send(Argument);
 }
 /**
  * Allows us to transfer data when we start dragging elements

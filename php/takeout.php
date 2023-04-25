@@ -9,12 +9,10 @@
     <main class="displayGrid middle innergrid">
         <div class="leftside">
             <div class="textCenter">
-                <button class="topbottom whiteText categories" onclick="GetCategory('./orderItems/appetizers.php');">Appetizers</button>
-                <button class="topbottom whiteText categories" onclick="GetCategory('./orderItems/burgers.php');">Burgers</button>
-                <button class="topbottom whiteText categories" onclick="GetCategory('./orderItems/poultry.php');">Poultry</button>
-                <button class="topbottom whiteText categories" onclick="GetCategory('./orderItems/salads.php');">Salads</button>
-                <button class="topbottom whiteText categories" onclick="GetCategory('./orderItems/kids.php');">Kids</button>
-                <button class="topbottom whiteText categories" onclick="GetCategory('./orderItems/drinks.php');">Drinks</button>
+                <?php
+                    $CataArr = ["Appetizers", "Burgers", "Poultry", "Salads", "Kids", "Drinks"];
+                    takeoutButtons( $CataArr );
+                ?>
             </div>
             <section id="categoryDisplay">
                 <h3>Click button to display category menu</h3>
