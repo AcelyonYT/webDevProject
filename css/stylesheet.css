@@ -46,7 +46,7 @@ h1 {
     text-align: center;
 }
 
-.price {
+.right {
     float: right;
 }
 
@@ -105,8 +105,18 @@ main {
     grid-area: main;
 }
 
-nav {
-    grid-area: navbar;
+.nav-right {
+    position: relative;
+    top: 50%;
+    grid-area: navRight;
+}
+
+.nav-left {
+    grid-area: navLeft;
+}
+
+.navArea {
+    grid-area: navBar;
 }
 
 footer {
@@ -128,9 +138,15 @@ header {
     padding: 0;
     grid-template-columns: 0.5fr 5fr 0.5fr;
     grid-template-areas: 
-        "navbar     navbar       navbar"
+        "navBar     navBar       navBar"
         "header     header      header"
         "sidebar1   main        sidebar2"
         "sidebar1   main        sidebar2"
         "footer     footer      footer";
+}
+
+.nav-container {
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-areas: 
+        "navLeft    navLeft    navRight";
 }

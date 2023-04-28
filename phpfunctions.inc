@@ -38,16 +38,19 @@
     function PageNav() {
 ?>
         <!-- navigation stuff -->
-        <nav class="topbottom">
-            <ul class="nav-bar textCenter">
-                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./index.php">Home</a></li>
-                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./about.php">About</a></li>
-                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./menu.php">Menu</a></li>
-                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./takeout.php">Order</a></li>
-                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./contact.php">Contact</a></li>
-                <li class="nav-list"><a class="links whiteText noDec newsize25" href="./map.php">Map</a></li>
-            </ul>
-        </nav>
+        <div class="nav-container displayGrid navArea topbottom textCenter full">
+            <nav class="nav-left">
+                <ul class="nav-bar">
+                    <li class="nav-list"><a class="links whiteText noDec newsize25" href="./index.php">Home</a></li>
+                    <li class="nav-list"><a class="links whiteText noDec newsize25" href="./about.php">About</a></li>
+                    <li class="nav-list"><a class="links whiteText noDec newsize25" href="./menu.php">Menu</a></li>
+                    <li class="nav-list"><a class="links whiteText noDec newsize25" href="./takeout.php">Order</a></li>
+                    <li class="nav-list"><a class="links whiteText noDec newsize25" href="./contact.php">Contact</a></li>
+                    <li class="nav-list"><a class="links whiteText noDec newsize25" href="./map.php">Map</a></li>
+                </ul>
+            </nav>
+            <a class="nav-right right newsize25 " href="">Register Account</a>
+        </div>
 <?php        
     }
 ?>
@@ -133,7 +136,7 @@
 
             while($Row = $Results->fetch_row())
             {
-                echo "<h3>".$Row[1]." <span class='price'>$".$Row[3]."</span></h3>\n";
+                echo "<h3>".$Row[1]." <span class='right'>$".$Row[3]."</span></h3>\n";
                 echo "<p>".$Row[2]."</p>\n";
             }
         }  
