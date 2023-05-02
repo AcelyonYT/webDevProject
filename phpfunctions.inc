@@ -49,7 +49,7 @@
                     <li class="nav-list"><a class="links whiteText noDec newsize25" href="./map.php">Map</a></li>
                 </ul>
             </nav>
-            <a class="nav-right right newsize25 " href="">Register Account</a>
+            <a class="nav-right right newsize25 " href="./login.php">Register Account</a>
         </div>
 <?php        
     }
