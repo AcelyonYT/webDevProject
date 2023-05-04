@@ -218,3 +218,54 @@
         }
     }
 ?>
+
+<?php 
+    function CreateNewUser()
+    {
+        if ( isset( $_POST["first-name"] && ))
+        {
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $emailErr = "Invalid email format";
+                echo '<script type="text/javascript">alert('$emailErr');</script>';
+                exit();
+            }
+
+            $Connection = DatabaseConnect();
+
+            $SQL = "insert into users( USER_EMAIL, USER_PASSWORD, USER_FNAME, USER_LNAME, USER_ADDRESS, USER_CITY, USER_STATE, USER_ZIP) value (";
+            $SQL .= "\"".$_POST['USER_EMAIL']."\"";
+            $SQL .= ",\"".$_POST['USER_PASSWORD']."\"";
+            $SQL .= ",\"".$_POST['USER_FNAME']."\"";
+            $SQL .= ",\"".$_POST['USER_LNAME']."\"";
+            $SQL .= "\"".$_POST['USER_ADDRESS']."\"";
+            $SQL .= "\"".$_POST['USER_CITY']."\"";
+            $SQL .= "\"".$_POST['USER_STATE']."\"";
+            $SQL .= "\"".$_POST['USER_ZIP']."\"";
+            $SQL .= ");";
+
+            $Results = $Connection->query( $SQL );
+
+            if ( $Results )
+            {
+                // success message
+                $success = "Account successfully created!";
+                echo '<script type="text/javascript">alert('$success');</script>';
+                echo '<script type="text/javascript">createAjax( null, 'loginForm.php', '');</script>';
+            }
+            else
+            {
+                $errMsg = "Error occured when creating account. Please try again."; 
+                echo '<script type="text/javascript">alert('$errMsg');</script>';
+            }
+            
+            $Connection->close();
+        }
+         else
+        {
+            // no post data notify the user
+            $fail = "Account could not be created. More information is needed.";
+            echo '<script type="text/javascript">alert('$fail');</script>';
+        }
+
+    }
+?>
