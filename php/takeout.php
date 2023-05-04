@@ -1,7 +1,7 @@
 <?php require("../phpfunctions.inc") ?>
 <?php
     $StyleArray = ["../css/takeoutStyle.css", "../css/innergridStyle.css"];
-    $JSArray = ["../javascript/takeoutScript.js"];
+    $JSArray = ["../javascript/takeoutScript.js", "../javascript/ajax.js"];
     HTMLStart("Road Kill Grill", $StyleArray, $JSArray);
     PageNav();
     PageHeader("Take-Out");

@@ -1,4 +1,7 @@
 <?php
+    // start the session
+    session_start();
+    
     // function to start HTML page
     function HTMLStart( $title, $StyleArray, $JSArray ) {
 ?>
@@ -205,7 +208,7 @@
     {
         for( $i = 0; $i < count( $CategoryArr ); $i++ )
         {
-            echo "<button class='topbottom whiteText categories' onclick='GetCategory(`categoryDisplay`, `".$CategoryArr[ $i ]."`);'>".$CategoryArr[ $i ]."</button>";
+            echo "<button class='topbottom whiteText categories' onclick='createAjax(`categoryDisplay`, `./menuItems.php`, `".$CategoryArr[ $i ]."`);'>".$CategoryArr[ $i ]."</button>";
         }
     }
 ?>

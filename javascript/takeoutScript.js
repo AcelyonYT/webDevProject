@@ -1,29 +1,4 @@
 /**
- * Gets the file we want to import html from
- * Creates an AJax request to get the file
- * @param {*} CategoryFileName Name of the file with the html
- */
-function GetCategory( ResultId, Category ) {
-    let xmlhttp;
-    if ( window.XMLHttpRequest ) {
-        xmlhttp = new XMLHttpRequest;
-    } else {
-        xmlhttp = new ActiveXObject( "Microsoft.XMLHTTP" );
-    }
-    xmlhttp.onreadystatechange = () =>  {
-        if ( xmlhttp.readyState == 4 && xmlhttp.status == 200 ) {
-            document.getElementById( ResultId ).innerHTML = xmlhttp.responseText;
-        }
-    }
-    xmlhttp.open( "POST", "menuItems.php", true );
-
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-    let Argument = `Category=${Category}`;
-
-    xmlhttp.send(Argument);
-}
-/**
  * Allows us to transfer data when we start dragging elements
  * @param {*} CurrentEvent The event that gets passed into from the ondrag event
  */
