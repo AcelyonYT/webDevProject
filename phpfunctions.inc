@@ -52,7 +52,13 @@
                     <li class="nav-list"><a class="links whiteText noDec newsize25" href="./map.php">Map</a></li>
                 </ul>
             </nav>
-            <a class="nav-right right newsize25 " href="./login.php">Register Account</a>
+            if ( isset( $_SESSION["UserName"] ) ) {
+                echo "<p class='nav-right right newsize25'>".$_SESSION["UserName"]."<a href='logout.php'>  Log Out</a></p>\n";
+            }
+            else
+            {
+                echo "<a class="nav-right right newsize25 " href="./login.php">Register Account</a>";
+            }
         </div>
 <?php        
     }
