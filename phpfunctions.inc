@@ -55,7 +55,7 @@
 <?php
         if ( isset( $_SESSION["Email"] ) ) 
         {
-            echo "<p class='nav-right right newsize25'>".$_SESSION["Email"]."<a href='logout.php'>Log Out</a></p>\n";
+            echo "<p class='nav-right right newsize25'>".$_SESSION["Email"]." | <a href='logout.php'>Log Out</a></p>\n";
         }
         else
         {
