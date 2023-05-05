@@ -53,9 +53,9 @@
                 </ul>
             </nav>
 <?php
-        if ( isset( $_SESSION["UserName"] ) ) 
+        if ( isset( $_SESSION["Email"] ) ) 
         {
-            echo "<p class='nav-right right newsize25'>".$_SESSION["UserName"]."<a href='logout.php'>Log Out</a></p>\n";
+            echo "<p class='nav-right right newsize25'>".$_SESSION["Email"]."<a href='logout.php'>Log Out</a></p>\n";
         }
         else
         {
@@ -124,7 +124,7 @@
 ?>
 
 <?php
-    DatabaseConnect()
+    function DatabaseConnect()
     {
         $Server = "127.0.0.1";
         $Username = "root";
@@ -224,27 +224,30 @@
 <?php 
     function CreateNewUser()
     {
-        if ( isset( $_POST["first-name"] ) )
+        $email = $_POST["USER_EMAIL"];
+        if ( isset( $_POST["USER_FNAME"] ) )
         {
             if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) 
             {
                 $emailErr = "Invalid email format";
-                echo '<script type="text/javascript">alert('.$emailErr.');</script>';
+                echo '<script type="text/javascript">
+                    alert(`'.$emailErr.'`);
+                    window.location.href="./login.php";
+                </script>';
                 exit();
             }
 
             $Connection = DatabaseConnect();
 
-            $SQL = "insert into users( USER_EMAIL, USER_PASSWORD, USER_FNAME, USER_LNAME, USER_ADDRESS, USER_CITY, USER_STATE, USER_ZIP) value (";
-            $SQL .= "\"".$_POST['USER_EMAIL']."\"";
-            $SQL .= ",\"".$_POST['USER_PASSWORD']."\"";
-            $SQL .= ",\"".$_POST['USER_FNAME']."\"";
-            $SQL .= ",\"".$_POST['USER_LNAME']."\"";
-            $SQL .= "\"".$_POST['USER_ADDRESS']."\"";
-            $SQL .= "\"".$_POST['USER_CITY']."\"";
-            $SQL .= "\"".$_POST['USER_STATE']."\"";
-            $SQL .= "\"".$_POST['USER_ZIP']."\"";
-            $SQL .= ");";
+            $SQL = "INSERT INTO users( USER_EMAIL, USER_PASSWORD, USER_FNAME, USER_LNAME, USER_ADDRESS, USER_CITY, USER_STATE, USER_ZIP) VALUES (";
+            $SQL .= "'".$_POST['USER_EMAIL']."', ";
+            $SQL .= "'".$_POST['USER_PASSWORD']."', ";
+            $SQL .= "'".$_POST['USER_FNAME']."', ";
+            $SQL .= "'".$_POST['USER_LNAME']."', ";
+            $SQL .= "'".$_POST['USER_ADDRESS']."', ";
+            $SQL .= "'".$_POST['USER_CITY']."', ";
+            $SQL .= "'".$_POST['USER_STATE']."', ";
+            $SQL .= "'".$_POST['USER_ZIP']."');";
 
             $Results = $Connection->query( $SQL );
 
@@ -252,15 +255,19 @@
             {
                 // success message
                 $success = "Account successfully created!";
-                echo '<script type="text/javascript">alert('.$success.');</script>';
-                echo '<script type="text/javascript">createAjax( null, `loginForm.php`, ``);</script>';
+                echo '<script type="text/javascript">
+                        alert(`'.$success.'`);
+                        window.location.href="./login.php";
+                    </script>';
             }
             else
             {
                 $errMsg = "Error occured when creating account. Please try again."; 
-                echo '<script type="text/javascript">alert('.$errMsg.');</script>';
+                echo '<script type="text/javascript">
+                        alert(`'.$errMsg.'`);
+                        window.location.href="./login.php";
+                    </script>';
             }
-            
             $Connection->close();
         }
          else

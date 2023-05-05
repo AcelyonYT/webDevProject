@@ -1,10 +1,10 @@
 <?php require("../phpfunctions.inc") ?>
 <?php
     // check for POST variables
-    if ( isset( $_POST["UserName"] ))
+    if ( isset( $_POST["Email"] ))
     {
         // save the user name and password to the session
-        $_SESSION["UserName"] = $_POST["UserName"];
+        $_SESSION["Email"] = $_POST["Email"];
         $_SESSION["Password"] = $_POST["Password"];
         // load page 1
         header( "Location: index.php" );

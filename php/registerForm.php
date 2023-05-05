@@ -1,4 +1,4 @@
-<form name="data-input" action="login.php" method="POST">
+<form name="data-input" action="user-insert.php" method="POST">
     <p>E-mail: <input name="USER_EMAIL" type="text" required="true" /></p>
     <p>Password: <input name="USER_PASSWORD" type="text" required="true" /></p>
     <p>First Name: <input name="USER_FNAME" type="text" required="true" /></p>
@@ -7,5 +7,5 @@
     <p>City: <input name="USER_CITY" type="text" required="true" /></p>
     <p>State: <input name="USER_STATE" type="text" required="true" /></p>
     <p>Zip: <input name="USER_ZIP" type="text" required="true" /></p>
-    <p><button type="submit" onclick="createAjax(null, 'user-insert.php', '');">Create Account</button></p>
+    <p><button type="submit">Create Account</button></p>
 </form>
