@@ -122,8 +122,9 @@
 <?php
     }
 ?>
+
 <?php
-    function MenuItemGet( $ItemCat )
+    DatabaseConnect()
     {
         $Server = "127.0.0.1";
         $Username = "root";
@@ -137,6 +138,15 @@
             echo "<h2>Database Error</h2>\n";
             die( "MySQLi Connection Error: ".$Connection->connect_error."\n" );
         }
+
+        return $Connection;
+    }
+?>
+
+<?php
+    function MenuItemGet( $ItemCat )
+    {
+        $Connection = DatabaseConnect();
 
         $SQL = "SELECT ITEM_CATEGORY, ITEM_NAME, ITEM_DESCRIPTION, ITEM_PRICE FROM MENU WHERE ITEM_CATEGORY = '".$ItemCat."';";
         $Results = $Connection->query( $SQL );
@@ -165,18 +175,7 @@
     function DrinkItemGet( $DrinkCats )
     {
 
-        $Server = "127.0.0.1";
-        $Username = "root";
-        $Password = "test";
-        $Database = "homework";
-
-        $Connection = new mysqli( $Server, $Username, $Password, $Database );
-
-        if( $Connection->connect_error )
-        {
-            echo "<h2>Database Error</h2>\n";
-            die( "MySQLi Connection Error: ".$Connection->connect_error."\n" );
-        }
+        $Connection = DatabaseConnect();
 
         echo "<h1 class='menuHeader textCenter whiteText'>Drinks</h1>\n";
 
