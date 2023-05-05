@@ -52,13 +52,16 @@
                     <li class="nav-list"><a class="links whiteText noDec newsize25" href="./map.php">Map</a></li>
                 </ul>
             </nav>
-            if ( isset( $_SESSION["UserName"] ) ) {
-                echo "<p class='nav-right right newsize25'>".$_SESSION["UserName"]."<a href='logout.php'>  Log Out</a></p>\n";
-            }
-            else
-            {
-                echo "<a class="nav-right right newsize25 " href="./login.php">Register Account</a>";
-            }
+<?php
+        if ( isset( $_SESSION["UserName"] ) ) 
+        {
+            echo "<p class='nav-right right newsize25'>".$_SESSION["UserName"]."<a href='logout.php'>Log Out</a></p>\n";
+        }
+        else
+        {
+            echo "<a class='nav-right right newsize25' href='./login.php'>Register Account</a>";
+        }
+?>
         </div>
 <?php        
     }
@@ -201,7 +204,7 @@
                 echo "<p>No results returned from the query</p>\n";
             }
 
-            echo "<h3>".$DrinkCats[$i]." <span class='price'>$".$Price."</span></h3>\n";
+            echo "<h3>".$DrinkCats[$i]." <span class='right'>$".$Price."</span></h3>\n";
             echo "<p>".$Description."</p>\n";
         }
 
@@ -222,11 +225,12 @@
 <?php 
     function CreateNewUser()
     {
-        if ( isset( $_POST["first-name"] && ))
+        if ( isset( $_POST["first-name"] ) )
         {
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) 
+            {
                 $emailErr = "Invalid email format";
-                echo '<script type="text/javascript">alert('$emailErr');</script>';
+                echo '<script type="text/javascript">alert('.$emailErr.');</script>';
                 exit();
             }
 
@@ -249,13 +253,13 @@
             {
                 // success message
                 $success = "Account successfully created!";
-                echo '<script type="text/javascript">alert('$success');</script>';
-                echo '<script type="text/javascript">createAjax( null, 'loginForm.php', '');</script>';
+                echo '<script type="text/javascript">alert('.$success.');</script>';
+                echo '<script type="text/javascript">createAjax( null, `loginForm.php`, ``);</script>';
             }
             else
             {
                 $errMsg = "Error occured when creating account. Please try again."; 
-                echo '<script type="text/javascript">alert('$errMsg');</script>';
+                echo '<script type="text/javascript">alert('.$errMsg.');</script>';
             }
             
             $Connection->close();
@@ -264,7 +268,7 @@
         {
             // no post data notify the user
             $fail = "Account could not be created. More information is needed.";
-            echo '<script type="text/javascript">alert('$fail');</script>';
+            echo '<script type="text/javascript">alert('.$fail.');</script>';
         }
 
     }

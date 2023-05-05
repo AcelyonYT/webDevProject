@@ -13,13 +13,18 @@
     // set the title
     $Title = "Login";
     $StyleArray = ["../css/stylesheet.css"];
-    $JSArray = ["../javascript/forms.js", "../javascript/ajax.js"];
+    $JSArray = ["../javascript/ajax.js"];
     // write out the beginning of the web page
     HTMLStart( $Title, $StyleArray, $JSArray );
     // write out the header
     PageHeader( $Title );
 ?>
-    <main id="forms" onload="createAjax('forms', 'loginForm.php', '');">
+    <main id="forms">
+        <script>
+            window.onload= () => {
+                createAjax('forms', 'loginForm.php', '');
+            };
+        </script>
     </main>
 <?php
     Sidebar1();

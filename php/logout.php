@@ -1,5 +1,5 @@
 <?php
-    require "phpfunctions.inc";
+    require("../phpfunctions.inc");
 
     session_destroy();
 
